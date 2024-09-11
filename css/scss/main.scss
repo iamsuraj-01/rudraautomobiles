@@ -502,10 +502,15 @@ a {
     /* Navbar */
     .navbar {
         /* Navbar Brand */
-        .navbar-brand img {
-            width: 60px;
-            max-width: 100%;
-            height: auto;
+        .navbar-brand {
+            img {
+                width: 60px;
+                max-width: 100%;
+                height: auto;
+            }
+            h2 {
+                font-size: 1rem;
+            }
         }
         .navbar-nav {
             .nav-link {
