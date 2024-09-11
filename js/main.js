@@ -25,55 +25,13 @@
         }
     });
     
-    // Dropdown on mouse hover
-    const $dropdown = $(".dropdown");
-    const $dropdownToggle = $(".dropdown-toggle");
-    const $dropdownMenu = $(".dropdown-menu");
-    const showClass = "show";
-    
-    $(window).on("load resize", function() {
-        if (this.matchMedia("(min-width: 992px)").matches) {
-            $dropdown.hover(
-            function() {
-                const $this = $(this);
-                $this.addClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "true");
-                $this.find($dropdownMenu).addClass(showClass);
-            },
-            function() {
-                const $this = $(this);
-                $this.removeClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "false");
-                $this.find($dropdownMenu).removeClass(showClass);
-            }
-            );
-        } else {
-            $dropdown.off("mouseenter mouseleave");
-        }
-    });
+    // Add click event listener to each nav link
+    $(".navbar-nav .nav-link").on("click", function () {
+        // Remove the 'active' class from all links
+        $(".navbar-nav .nav-link").removeClass("active");
 
-    // Active Link Based on Current URL
-    const currentUrl = window.location.pathname;
-
-    $(".navbar-nav .nav-link, .navbar-nav .dropdown-item").each(function () {
-        const linkUrl = $(this).attr("href");
-
-        // Check if the current URL matches the link (excluding '#' links)
-        if (currentUrl.includes(linkUrl) && linkUrl !== '#') {
-            $(".navbar-nav .nav-link, .navbar-nav .dropdown-item").removeClass("active"); // Remove active class from all links
-            $(this).addClass("active"); // Add active class to the matched link
-
-            // If it's a dropdown item, make its parent dropdown toggle active
-            if ($(this).hasClass('dropdown-item')) {
-                $(this).closest('.dropdown').find('.nav-link.dropdown-toggle').addClass('active');
-            }
-        }
-    });
-
-    // Facts Counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
+        // Add the 'active' class to the clicked link
+        $(this).addClass("active");
     });
     
     // Back To Top Button
@@ -149,40 +107,6 @@
             $('#autoWidth').removeClass('cs-hidden');
         }
     });
-
-    // Theme Switcher (Dark Mode) //
-    document.getElementById('theme-switcher').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default anchor click behavior
-        document.body.classList.toggle('dark-mode');
-    
-        // Get the icon element
-        var themeIcon = document.getElementById('theme-icon');
-    
-        // Check and toggle the theme
-        if (document.body.classList.contains('dark-mode')) {
-            // Change to dark mode
-            themeIcon.classList.remove('fa-sun'); // Remove sun icon
-            themeIcon.classList.add('fa-moon'); // Add moon icon
-            localStorage.setItem('theme', 'dark'); // Save theme preference
-        } else {
-            // Change to light mode
-            themeIcon.classList.remove('fa-moon'); // Remove moon icon
-            themeIcon.classList.add('fa-sun'); // Add sun icon
-            localStorage.setItem('theme', 'light'); // Save theme preference
-        }
-    });
-    // On page load, check the saved theme preference
-    window.onload = function() {
-        var themeIcon = document.getElementById('theme-icon');
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        } else {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-    };
     
 })(jQuery);
 

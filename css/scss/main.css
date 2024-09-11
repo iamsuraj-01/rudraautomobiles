@@ -1,29 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap");
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", "Rubik", "Barlow", sans-serif;
 }
 
 /* Theme Variables */
 /* Background Colors */
 .bg-theme {
-  background: #06A3DA;
+  background: #D81324;
 }
 
 .bg-secondary-theme {
-  background: #0b5ed7;
+  background: #b8101f;
 }
 
 /* Text Colors */
 .text-theme {
-  color: #06A3DA;
+  color: #D81324;
 }
 
 .text-secondary-theme {
-  color: #0b5ed7;
+  color: #b8101f;
 }
 
 /* Text Alignment */
@@ -100,13 +100,13 @@ a {
 
 .btn-theme {
   color: #FFFFFF;
-  background-color: #06A3DA;
-  border-color: #06A3DA;
+  background-color: #D81324;
+  border-color: #D81324;
 }
 .btn-theme:hover {
   color: #FFFFFF;
-  background-color: #0b5ed7;
-  border-color: #0b5ed7;
+  background-color: #b8101f;
+  border-color: #b8101f;
 }
 
 .btn-square, .btn-sm-square, .btn-lg-square {
@@ -148,7 +148,7 @@ a {
 .spinner {
   width: 40px;
   height: 40px;
-  background: #06A3DA;
+  background: #D81324;
   margin: 100px auto;
   animation: sk-rotateplane 1.2s infinite ease-in-out;
 }
@@ -195,7 +195,7 @@ a {
   height: 3px;
   bottom: 0;
   left: 0; /* Start from the left */
-  background: #06A3DA;
+  background: #D81324;
   border-radius: 2px;
 }
 .section-title.text-center::before {
@@ -210,7 +210,7 @@ a {
   box-shadow: inset 0 0 0 50px transparent;
 }
 .hover-fill:hover {
-  box-shadow: inset 0 0 0 0 #06A3DA;
+  box-shadow: inset 0 0 0 0 #D81324;
 }
 
 /* Zoom In Effect */
@@ -223,7 +223,7 @@ a {
 
 /* Navbar */
 .navbar .navbar-brand img {
-  width: 65px;
+  width: 70px;
   height: auto;
   max-width: 100%;
   pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
@@ -232,28 +232,28 @@ a {
   position: relative;
   margin-left: 25px;
   padding: 35px 0;
-  color: #FFFFFF;
+  color: #212529;
   font-size: 18px;
   font-weight: 600;
   outline: none;
   transition: 0.5s;
 }
 .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
-  color: #06A3DA;
+  color: #D81324;
 }
 .navbar .navbar-nav .show > .nav-link {
-  color: #06A3DA;
+  color: #D81324;
 }
 .navbar .navbar-toggler {
-  color: #06A3DA !important;
-  border-color: #06A3DA !important;
+  color: #D81324 !important;
+  border-color: #D81324 !important;
 }
 .navbar .dropdown-menu {
   padding: 0;
   border-radius: 0;
 }
 .navbar .dropdown-menu .dropdown-item {
-  background-color: #06A3DA;
+  background-color: #D81324;
   color: #FFFFFF;
   border-bottom: 1px solid #FFFFFF;
   text-align: center;
@@ -261,12 +261,12 @@ a {
   transition: 0.5s;
 }
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #0b5ed7;
+  background-color: #b8101f;
   color: #FFFFFF;
 }
 .navbar .dropdown-menu .dropdown-item.active, .navbar .dropdown-menu .dropdown-item:active {
   color: #FFFFFF;
-  background-color: #0b5ed7;
+  background-color: #b8101f;
 }
 
 .sticky-top.navbar .navbar-nav .nav-link {
@@ -274,24 +274,61 @@ a {
   color: #212529;
 }
 .sticky-top.navbar .navbar-nav .nav-link:hover, .sticky-top.navbar .navbar-nav .nav-link.active {
-  color: #06A3DA;
+  color: #D81324;
 }
 
 /* Footer */
-footer .navbar-brand img {
-  width: 100px;
-  height: auto;
-  max-width: 100%;
-  pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
+.footer .btn.btn-social {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F2F2F2;
+  border: 1px solid #FFFFFF;
+  border-radius: 35px;
+  transition: 0.3s;
 }
-footer .footer-contact .form-control {
-  width: 50%;
+.footer .btn.btn-social:hover {
+  color: #D81324;
 }
-footer .link-animated a {
-  transition: 0.5s;
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
 }
-footer .link-animated a:hover {
-  padding-left: 10px;
+.footer .btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+.footer .btn.btn-link:hover {
+  letter-spacing: 1px;
+  box-shadow: none;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.footer .copyright {
+  padding: 25px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.footer .copyright a {
+  color: #F2F2F2;
+  text-decoration: none;
+}
+.footer .copyright a:hover {
+  color: #D81324;
 }
 
 /* Landing Page Start */
@@ -311,7 +348,7 @@ footer .link-animated a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(9, 30, 62, 0.8);
+  background: rgba(9, 30, 62, 0.7);
   z-index: 1;
 }
 .carousel .carousel-inner .carousel-item .carousel-caption {
@@ -347,39 +384,18 @@ footer .link-animated a:hover {
   margin-bottom: 90px;
 }
 
-/* Service */
-.service-item {
-  position: relative;
-  height: 300px;
-  padding: 0 30px;
-  transition: bottom 0.5s, opacity 0.5s;
+/* Service Section */
+.service .nav .nav-link {
+  background: #F2F2F2;
+  color: #212529;
+  transition: 0.5s;
 }
-.service-item .service-icon {
-  margin-bottom: 30px;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #06A3DA;
-  border-radius: 2px;
-  transform: rotate(-45deg);
+.service .nav .nav-link.active {
+  background-color: #D81324 !important;
+  color: #FFFFFF !important;
 }
-.service-item .service-icon .text-white {
-  transform: rotate(45deg);
-}
-.service-item a.btn {
-  position: absolute;
-  width: 60px;
-  bottom: -48px;
-  left: 50%;
-  margin-left: -30px;
-  opacity: 0;
-  transition: bottom 0.5s, opacity 0.5s;
-}
-.service-item:hover a.btn {
-  bottom: -24px;
-  opacity: 1;
+.service .nav .nav-link.active h4 {
+  color: #FFFFFF !important;
 }
 
 /* Gallery */
@@ -393,48 +409,6 @@ footer .link-animated a:hover {
   -o-object-fit: cover;
      object-fit: cover;
   box-sizing: border-box;
-}
-
-/* Team */
-.team-item {
-  transition: 0.5s;
-}
-.team-item .team-social {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5s;
-}
-.team-item .team-social a.btn {
-  position: relative;
-  margin: 0 3px;
-  margin-top: 100px;
-  opacity: 0;
-}
-.team-item:hover {
-  box-shadow: 0 0 30px #DDDDDD;
-}
-.team-item:hover .team-social {
-  background: rgba(9, 30, 62, 0.7);
-}
-.team-item:hover .team-social a.btn {
-  opacity: 1;
-  margin-top: 0;
-  transition: 0.3s;
-}
-.team-item:hover .team-social a.btn:nth-child(2) {
-  transition-delay: 0.05s;
-}
-.team-item:hover .team-social a.btn:nth-child(3) {
-  transition-delay: 0.1s;
-}
-.team-item:hover .team-social a.btn:nth-child(4) {
-  transition-delay: 0.15s;
 }
 
 /* Testimonial */
@@ -456,7 +430,7 @@ footer .link-animated a:hover {
 }
 .testimonial-carousel .owl-dot.active {
   width: 30px;
-  background: #06A3DA;
+  background: #D81324;
 }
 .testimonial-carousel .owl-item.center {
   position: relative;
@@ -466,7 +440,8 @@ footer .link-animated a:hover {
   transition: 0.5s;
 }
 .testimonial-carousel .owl-item.center .testimonial-item {
-  background: #FFFFFF;
+  background: #D81324 !important;
+  color: #FFFFFF;
   box-shadow: 0 0 20px #DDDDDD;
 }
 
@@ -525,99 +500,18 @@ footer .link-animated a:hover {
     width: 100%;
     background: #FFFFFF;
   }
-  /* Comment out or remove the below navbar code if you want the carousel below the navbar */
+  /* 
   .navbar {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 999;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid rgba(256, 256, 256, .1);
+      z-index: 999;
   }
+  */
   /* Gallery */
   .gallery .box {
     margin: -15px;
-  }
-  /* Facts Counter */
-  .facts {
-    position: relative;
-    margin-top: -75px;
-    z-index: 1;
-  }
-  /* Footer */
-  .footer {
-    padding: 30px 0;
-  }
-}
-/* Theme Switcher (Dark Mode) /*
-/* Dark Theme Variables */
-body.dark-mode {
-  /* Override styles for dark mode */
-  background-color: #121212;
-  color: #ffffff;
-  /* All Section */
-  /* Testimonial for Dark Mode */
-  /* Team for Dark Mode */
-  /* Smartphones and Tablets */
-}
-body.dark-mode .bg-white {
-  background: #121212 !important;
-}
-body.dark-mode .text-white {
-  color: #ffffff !important;
-}
-body.dark-mode .bg-light {
-  background: #1e1e1e !important;
-}
-body.dark-mode .shadow {
-  background: #121212 !important;
-  box-shadow: 0 0 30px #333333 !important;
-}
-body.dark-mode .navbar,
-body.dark-mode footer,
-body.dark-mode .carousel-caption,
-body.dark-mode .testimonial-item,
-body.dark-mode .service-item,
-body.dark-mode .gallery .box,
-body.dark-mode .team-item,
-body.dark-mode .blog-item {
-  background-color: #121212;
-  color: #ffffff;
-}
-body.dark-mode .testimonial-carousel .owl-item.center .testimonial-item {
-  background-color: #121212 !important;
-  box-shadow: 0 0 30px #333333;
-}
-body.dark-mode .team-item:hover {
-  box-shadow: 0 0 30px #333333;
-}
-body.dark-mode .form-control, body.dark-mode .form-select {
-  background-color: #121212;
-  color: #ffffff;
-}
-body.dark-mode .form-control::-moz-placeholder, body.dark-mode .form-select::-moz-placeholder {
-  color: #ffffff;
-}
-body.dark-mode .form-control::placeholder, body.dark-mode .form-select::placeholder {
-  color: #ffffff;
-}
-body.dark-mode .page-link {
-  background-color: #121212 !important;
-}
-body.dark-mode .page-link:active {
-  background-color: #06A3DA;
-}
-body.dark-mode .sticky-top.navbar .navbar-nav .nav-link {
-  color: #ffffff;
-}
-@media (max-width: 991.98px) {
-  body.dark-mode {
-    /* Navbar */
-  }
-  body.dark-mode .navbar .navbar-nav {
-    /* Navbar Link */
-  }
-  body.dark-mode .navbar .navbar-nav .nav-link, body.dark-mode .navbar .navbar-nav .nav-link.show {
-    color: #ffffff;
   }
 }/*# sourceMappingURL=main.css.map */

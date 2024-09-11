@@ -1,16 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap");
 
 /* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito", "Rubik", "Barlow", sans-serif;
 }
   
 /* Theme Variables */
-$theme: #06A3DA; // theme color
-$theme-secondary: #0b5ed7; // Secondary theme color
+$theme: #D81324; // theme color
+$theme-secondary: #b8101f; // Secondary theme color
 $white: #FFFFFF; // White color
 $dark: #212529; // Dark color
 
@@ -241,7 +241,7 @@ a {
 /* Navbar */
 .navbar {
     .navbar-brand img {
-        width: 65px;
+        width: 70px;
         height: auto;
         max-width: 100%;
         pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
@@ -252,7 +252,7 @@ a {
             position: relative;
             margin-left: 25px;
             padding: 35px 0;
-            color: $white;
+            color: $dark;
             font-size: 18px;
             font-weight: 600;
             outline: none;
@@ -313,27 +313,68 @@ a {
 }
 
 /* Footer */
-footer {
-    .navbar-brand img {
-        width: 100px;
-        height: auto;
-        max-width: 100%;
-        pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
-    }
-
-    .footer-contact .form-control {
-        width: 50%;
-    }
-
-    .link-animated {
-        a {
-            transition: .5s;
-            &:hover {
-                padding-left: 10px;
-            }
+.footer {
+    .btn {
+      &.btn-social {
+        margin-right: 5px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #F2F2F2;
+        border: 1px solid #FFFFFF;
+        border-radius: 35px;
+        transition: 0.3s;
+  
+        &:hover {
+          color: $theme;
         }
+      }
+  
+      &.btn-link {
+        display: block;
+        margin-bottom: 5px;
+        padding: 0;
+        text-align: left;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: normal;
+        text-transform: capitalize;
+        transition: 0.3s;
+  
+        &::before {
+          position: relative;
+          content: "\f105";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          margin-right: 10px;
+        }
+  
+        &:hover {
+          letter-spacing: 1px;
+          box-shadow: none;
+          color: #FFFFFF; // Ensures white color on hover
+          text-decoration: none; // Removes underline on hover
+        }
+      }
     }
-}
+  
+    .copyright {
+      padding: 25px 0;
+      font-size: 15px;
+      border-top: 1px solid rgba(256, 256, 256, 0.1);
+      text-align: center; // Center aligns the text
+  
+      a {
+        color: #F2F2F2;
+        text-decoration: none; // Removes underline for links
+        &:hover {
+          color: $theme; // Hover effect for footer links
+        }
+      }
+    }
+}  
 
 /* Landing Page Start */
 
@@ -355,7 +396,7 @@ footer {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(9, 30, 62, 0.8); // Dark semi-transparent background
+                background: rgba(9, 30, 62, 0.7); // Dark semi-transparent background
                 z-index: 1; // Ensures the overlay is above the image
             }
 
@@ -396,42 +437,23 @@ footer {
     margin-bottom: 90px;
 }
 
-/* Service */
-.service-item {
-    position: relative;
-    height: 300px;
-    padding: 0 30px;
-    transition: bottom .5s, opacity .5s; // Specify properties to transition
-
-    .service-icon {
-        margin-bottom: 30px;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: $theme;
-        border-radius: 2px;
-        transform: rotate(-45deg);
-
-        .text-white {
-            transform: rotate(45deg);
+/* Service Section */
+.service {
+    .nav {
+        .nav-link {
+          background: #F2F2F2;
+          color: $dark;
+          transition: 0.5s;
+    
+          &.active {
+            background-color: $theme !important; // Ensure theme color is applied
+            color: #FFFFFF !important;
+    
+            h4 {
+              color: #FFFFFF !important;
+            }
+          }
         }
-    }
-
-    a.btn {
-        position: absolute;
-        width: 60px;
-        bottom: -48px;
-        left: 50%;
-        margin-left: -30px;
-        opacity: 0;
-        transition: bottom .5s, opacity .5s; // Ensure button transition matches
-    }
-
-    &:hover a.btn {
-        bottom: -24px;
-        opacity: 1;
     }
 }
 
@@ -449,58 +471,8 @@ footer {
     }
 }
 
-/* Team */
-.team-item {
-    transition: .5s;
-
-    .team-social {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: .5s;
-
-        a.btn {
-            position: relative;
-            margin: 0 3px;
-            margin-top: 100px;
-            opacity: 0;
-        }
-    }
-
-    &:hover {
-        box-shadow: 0 0 30px #DDDDDD;
-    }
-
-    &:hover .team-social {
-        background: rgba(9, 30, 62, .7);
-    }
-
-    &:hover .team-social a.btn {
-        opacity: 1;
-        margin-top: 0;
-        transition: .3s;
-    }
-
-    &:hover .team-social a.btn:nth-child(2) {
-        transition-delay: .05s;
-    }
-
-    &:hover .team-social a.btn:nth-child(3) {
-        transition-delay: .1s;
-    }
-
-    &:hover .team-social a.btn:nth-child(4) {
-        transition-delay: .15s;
-    }
-}
-
 /* Testimonial */
-.testimonial-carousel{
+.testimonial-carousel {
     .owl-dots {
         margin-top: 15px;
         display: flex;
@@ -529,7 +501,8 @@ footer {
         transition: .5s;
     }
     .owl-item.center .testimonial-item {
-        background: #FFFFFF;
+        background: $theme!important;
+        color: $white;
         box-shadow: 0 0 20px #DDDDDD;
     }
 }
@@ -611,7 +584,7 @@ footer {
         background: #FFFFFF;
     }
 
-    /* Comment out or remove the below navbar code if you want the carousel below the navbar */
+    /* 
     .navbar {
         position: absolute;
         width: 100%;
@@ -620,121 +593,12 @@ footer {
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
     }
+    */
 
    /* Gallery */
     .gallery {
         .box {
             margin: -15px;
-        }
-    }
-
-    /* Facts Counter */
-    .facts {
-        position: relative;
-        margin-top: -75px;
-        z-index: 1;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 30px 0;
-    }
-}
-
-/* Theme Switcher (Dark Mode) /*
-/* Dark Theme Variables */
-$dark-bg-color: #121212; // Background color for dark mode
-$dark-text-color: #ffffff; // Text color for dark mode
-
-body.dark-mode {
-    /* Override styles for dark mode */
-    background-color: $dark-bg-color;
-    color: $dark-text-color;
-  
-    .bg-white {
-      background: $dark-bg-color!important;
-    }
-  
-    .text-white {
-      color: $dark-text-color!important;
-    }
-
-    .bg-light {
-        background: #1e1e1e!important;
-    }
-
-    .shadow {
-        background: $dark-bg-color!important; // Background for shadow in dark mode
-        box-shadow: 0 0 30px #333333!important; // Darker shadow color for dark mode
-    }
-    
-    /* All Section */
-    .navbar,
-    footer,
-    .carousel-caption,
-    .testimonial-item,
-    .service-item,
-    .gallery .box,
-    .team-item,
-    .blog-item {
-      background-color: $dark-bg-color;
-      color: $dark-text-color;
-    }
-
-    /* Testimonial for Dark Mode */
-    .testimonial-carousel {
-        .owl-item.center .testimonial-item {
-            background-color: $dark-bg-color!important;
-            box-shadow: 0 0 30px #333333; // Darker shadow color for dark mode
-        }
-    }
-
-    /* Team for Dark Mode */
-    .team-item {
-        &:hover {
-            box-shadow: 0 0 30px #333333; // Darker shadow color for dark mode
-        }
-    }
-
-    // Form
-    .form-control, .form-select {
-        background-color: $dark-bg-color;
-        color: #ffffff; // Text color for the input
-        &::placeholder {
-            color: #ffffff; // Placeholder text color
-        }
-    }
-    
-    // Blog Pagination
-    .page-link {
-        background-color: $dark-bg-color!important;
-        &:active {
-            background-color: #06A3DA;
-        }
-    }
-
-    // Sticky Top Navbar
-    .sticky-top.navbar {
-        .navbar-nav {
-            .nav-link {
-                color: $dark-text-color;
-            }
-        }
-    }
-
-    /* Smartphones and Tablets */
-    @media (max-width: 991.98px) {
-        /* Navbar */
-        .navbar {
-            .navbar-nav {
-                /* Navbar Link */
-                .nav-link {
-                    &,
-                    &.show {
-                        color: $dark-text-color;
-                    }
-                }
-            }
         }
     }
 }
