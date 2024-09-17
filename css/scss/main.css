@@ -248,6 +248,9 @@ a {
   color: #D81324 !important;
   border-color: #D81324 !important;
 }
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
 .navbar .dropdown-menu {
   padding: 0;
   border-radius: 0;

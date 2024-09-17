@@ -271,6 +271,9 @@ a {
     .navbar-toggler {
         color: $theme !important;
         border-color: $theme !important;
+        &:focus {
+            box-shadow: none;
+        }
     }
 
     .dropdown-menu {
